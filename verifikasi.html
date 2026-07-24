@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengecekan Data - MagangHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="loadData()">
+
+<!-- Navbar MagangHub Kemnaker -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="brand">
+            <span class="logo-circle"><i class="fa-solid fa-graduation-cap"></i></span>
+            <div class="brand-text">
+                <span class="brand-title">maganghub</span>
+                <span class="brand-subtitle">oleh Kemnaker (parody)</span>
+            </div>
+        </div>
+	<div class="nav-right">
+	    <!-- Tombol Modal About -->
+	    <button class="btn-about" onclick="openAboutModal()" title="Tentang Website Ini">
+	        <i class="fa-solid fa-circle-info"></i>
+	    </button>
+	    <i class="fa-regular fa-bell nav-icon"></i>
+	    <div class="avatar-circle">
+	        <i class="fa-regular fa-user"></i>
+	    </div>
+	</div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="card">
+        <!-- Status Header Card -->
+        <div class="status-card-header">
+            <div class="left-status">
+                <div class="icon-square-red">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                </div>
+                <div>
+                    <h3 class="status-title">Syarat Belum Terpenuhi</h3>
+                    <p class="status-sub">Beberapa syarat belum terpenuhi</p>
+                </div>
+            </div>
+            <span class="badge-red" id="badgeProgress">2/5 Lengkap</span>
+        </div>
+
+        <!-- Checklist -->
+        <div class="checklist-group">
+            <div class="check-row">
+                <div id="c1" class="loading-spinner"></div>
+                <span class="check-text">Fresh graduate — ijazah kurang dari 1 tahun</span>
+            </div>
+
+            <div class="check-row">
+                <div id="c2" class="loading-spinner"></div>
+                <span class="check-text">Data Dukcapil & PDDikti sesuai</span>
+            </div>
+
+            <div class="check-row">
+                <div class="icon-check-green"><i class="fa-solid fa-circle-check"></i></div>
+                <span class="check-text">Belum pernah ikut Program Magang Nasional</span>
+            </div>
+
+            <div class="check-row">
+                <div class="icon-check-green"><i class="fa-solid fa-circle-check"></i></div>
+                <span class="check-text">Warga Negara Indonesia (NIK valid)</span>
+            </div>
+
+            <div class="check-row">
+                <div class="icon-check-green"><i class="fa-solid fa-circle-check"></i></div>
+                <span class="check-text">Lulusan D3/D4/S1 perguruan tinggi terakreditasi</span>
+            </div>
+        </div>
+
+        <!-- Title Section -->
+        <div class="pddikti-title-row">
+            <div class="title-left">
+                <i class="fa-solid fa-graduation-cap icon-cap"></i>
+                <h3>Verifikasi PDDICKTI</h3>
+            </div>
+            <div class="pill-checking">
+                <span class="spinner-small"></span>
+                <span>Sedang Memeriksa</span>
+            </div>
+        </div>
+
+        <!-- Data List (Semua diset "-" saat proses berlangsung) -->
+        <div class="data-group">
+            <div class="data-row">
+                <div class="data-icon-bg"><i class="fa-regular fa-id-card"></i></div>
+                <div class="data-content">
+                    <span class="data-label">Nama Mahasiswa</span>
+                    <span class="data-val" id="nama">-</span>
+                </div>
+            </div>
+
+            <div class="data-row">
+                <div class="data-icon-bg"><i class="fa-solid fa-hashtag"></i></div>
+                <div class="data-content">
+                    <span class="data-label">NIM</span>
+                    <span class="data-val" id="nim">-</span>
+                </div>
+            </div>
+
+            <div class="data-row">
+                <div class="data-icon-bg"><i class="fa-solid fa-ribbon"></i></div>
+                <div class="data-content">
+                    <span class="data-label">Jenjang Pendidikan</span>
+                    <span class="data-val" id="jenjang">-</span>
+                </div>
+            </div>
+
+            <div class="data-row">
+                <div class="data-icon-bg"><i class="fa-solid fa-building-columns"></i></div>
+                <div class="data-content">
+                    <span class="data-label">Universitas</span>
+                    <span class="data-val" id="kampus">-</span>
+                </div>
+            </div>
+
+            <div class="data-row">
+                <div class="data-icon-bg"><i class="fa-solid fa-book"></i></div>
+                <div class="data-content">
+                    <span class="data-label">Program Studi</span>
+                    <span class="data-val" id="prodi">-</span>
+                </div>
+            </div>
+
+            <div class="data-row">
+                <div class="data-icon-bg"><i class="fa-regular fa-calendar-check"></i></div>
+                <div class="data-content">
+                    <span class="data-label">Tanggal Kelulusan</span>
+                    <span class="data-val" id="lulus">-</span>
+                </div>
+            </div>
+        </div>
+
+        <p class="sync-text">Terakhir disinkronisasi: <span id="syncTime"></span></p>
+    </div>
+</div>
+<!-- Modal About / Tentang -->
+<div id="aboutModal" class="modal-overlay" onclick="closeAboutModal(event)">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3><i class="fa-solid fa-masks-theater"></i> Tentang Website Ini</h3>
+            <span class="close-modal" onclick="closeAboutModalDirect()">&times;</span>
+        </div>
+        <div class="modal-body">
+            <p class="about-dramatis">
+                Website ini tercipta dari <strong>jeritan batin, tetesan air mata, dan rasa frustrasi mendalam</strong> para pejuang <em>"Si Status Hijau"</em> (Eligible). 
+            </p>
+            <p class="about-dramatis">
+                Mereka yang mimpinya terendam dalam ketidakpastian, terjebak di pusaran putaran <em>loading</em> tak berujung, dan tersendat oleh drama verifikasi data di MagangHub Kemnaker.
+            </p>
+            <p class="about-quote">
+                "Dibuat semata-mata sebagai peredam rasa stres dan hiburan di kala harapan verifikasi tak kunjung menemui titik terang." 🕊️
+            </p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-close-modal" onclick="closeAboutModalDirect()">Saya Paham Perjuangannya</button>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <a href="https://instagram.com/ikbal.rdmc__" target="_blank" rel="noopener noreferrer">by: @ikbal.rdmc__</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
