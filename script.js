@@ -1,53 +1,108 @@
-// 1. Data Jenjang Formal
-const daftarJenjang = ["D4", "S1", "S2", "Profesi"];
-
-// 2. Data Gelar Pelestan/Kocak
-const daftarGelarKocak = [
-    "S.M. (Sarjana Malas)",
-    "S.T. (Sarjana Tidur)",
-    "S.Kom. (Sarjana Kompor)",
-    "S.E. (Sarjana Enak-enakan)",
-    "S.H. (Sarjana Halu)",
-    "S.Pd. (Sarjana Penuh Drama)",
-    "S.Sos. (Sarjana Sering Overthinking)",
-    "S.Ked. (Sarjana Kehabisan Duit)",
-    "S.Si. (Sarjana Selalu Insecure)",
-    "Sp.Kh. (Spesialis Khilaf Online)"
-];
-
-// 3. Data Program Studi Meme (Disesuaikan Per Jenjang)
-const prodiByJenjang = {
+// 1. Data Relasi Kombinasi Paket (Jenjang, Gelar, dan Prodi yang Sesuai)
+const kombinasiAkademik = {
     "D4": [
-        "D4 Rekayasa Perangkat Hitam (Pria Tampan)",
-        "D4 Terapan Repost Konten CapCut & FYP",
-        "D4 Spesialis Capung Duduk & Kopi Saset",
-        "D4 Teknik Mengabaikan Chat Group Alumni",
-        "D4 Tata Boga Cilok & Bakso Agus"
+        {
+            gelar: "S.Tr.T. (Sarjana Terapan Tidur)",
+            prodi: "D4 Teknik Mengabaikan Chat Group Alumni"
+        },
+        {
+            gelar: "S.Tr.Kom. (Sarjana Terapan Kompor)",
+            prodi: "D4 Rekayasa Perangkat Antre Promo Tanggal Kembar"
+        },
+        {
+            gelar: "S.Tr.M. (Sarjana Terapan Malas)",
+            prodi: "D4 Terapan Manajemen Parkiran Indomaret"
+        },
+        {
+            gelar: "S.Tr.Par. (Sarjana Terapan Pariwisata Healing)",
+            prodi: "D4 Terapan Repost Konten CapCut & FYP 3 Pagi"
+        },
+        {
+            gelar: "S.Tr.Gz. (Sarjana Terapan Gizi Instant)",
+            prodi: "D4 Tata Boga Cilok & Bakso Pinggir Jalan"
+        },
+        {
+            gelar: "S.Tr.Cap. (Sarjana Terapan Capung Duduk)",
+            prodi: "D4 Spesialis Capung Duduk & Kopi Saset 2000an"
+        }
     ],
     "S1": [
-        "S1 Teknik Otomotif Sepeda Listrik Rehan Unyu",
-        "S1 Ilmu Perjomokan Terapan",
-        "S1 Budidaya Mas Amba & Pak Vina",
-        "S1 Sastra Jomok & Bahasa Imut",
-        "S1 Hubungan Internasional Ngawi & Kota Amba",
-        "S1 Manajemen Minyak Kayu Putih",
-        "S1 Teknik Prompt AI Menit-Menit Akhir"
+        {
+            gelar: "S.T. (Sarjana Tidur)",
+            prodi: "S1 Teknik Otomotif Sepeda Listrik Komplek"
+        },
+        {
+            gelar: "S.T. (Sarjana Tidur)",
+            prodi: "S1 Teknik Prompt AI Menit-Menit Akhir"
+        },
+        {
+            gelar: "S.Kom. (Sarjana Kompor)",
+            prodi: "S1 Ilmu Menatap Jam Dinding Menjelang Jam Pulang"
+        },
+        {
+            gelar: "S.M. (Sarjana Malas)",
+            prodi: "S1 Manajemen Minyak Kayu Putih & Tolak Angin"
+        },
+        {
+            gelar: "S.Hum. (Sarjana Halu Minimalis)",
+            prodi: "S1 Sastra Bahasa Imut & Pura-Pura Lupa Chat"
+        },
+        {
+            gelar: "S.I.P. (Sarjana Ilmu Parkir)",
+            prodi: "S1 Hubungan Internasional Tetangga Sebelah Rumah"
+        },
+        {
+            gelar: "S.P. (Sarjana Pertanian Panen)",
+            prodi: "S1 Budidaya Kucing Garong & Ayam Tetangga"
+        },
+        {
+            gelar: "S.Sos. (Sarjana Sering Overthinking)",
+            prodi: "S1 Kearsipan Dokumen Rahasia Mas-Mas Biasa"
+        }
     ],
     "S2": [
-        "S2 Magister Overthinking & Analisis Chat Dibalas 'Y'",
-        "S2 Administrasi Healing Berkedok Tugas Akhir",
-        "S2 Spesialis Kopi Gula Aren 3 Cangkir Sehari",
-        "S2 Magister Penundaan Revisi Bab 4"
+        {
+            gelar: "M.T. (Magister Tidur)",
+            prodi: "S2 Magister Teknik Penundaan Revisi Bab 4"
+        },
+        {
+            gelar: "M.M. (Magister Malas)",
+            prodi: "S2 Administrasi Healing Berkedok Tugas Akhir"
+        },
+        {
+            gelar: "M.Kom. (Magister Kompor)",
+            prodi: "S2 Magister Overthinking & Analisis Chat Dibalas 'Y'"
+        },
+        {
+            gelar: "M.Psi. (Magister Pusing Sendiri)",
+            prodi: "S2 Teori Konspirasi Mengapa Libur Cepat Selesai"
+        },
+        {
+            gelar: "M.Gz. (Magister Gula Aren)",
+            prodi: "S2 Spesialis Kopi Gula Aren 3 Cangkir Sehari"
+        }
     ],
     "Profesi": [
-        "Spesialis Sepuh Canva & Desain Instan",
-        "Spesialis Tata Negara Sunda Empire",
-        "Profesi Pakar Menatap Jam Dinding",
-        "Spesialis Ahli Hindari Dosen Pembimbing"
+        {
+            gelar: "Sp.OT. (Spesialis Overthinking Terus)",
+            prodi: "Spesialis Ahli Hindari Pertanyaan 'Kapan Nikah?'"
+        },
+        {
+            gelar: "Sp.Kh. (Spesialis Khilaf Online)",
+            prodi: "Spesialis Sepuh Canva & Desain Instan 5 Menit"
+        },
+        {
+            gelar: "Apt. (Ahli Paling Tenang)",
+            prodi: "Profesi Konsultan Tidur Siang Tanpa Beban"
+        },
+        {
+            gelar: "Dr. (Dokter Rebahan)",
+            prodi: "Profesi Pakar Menatap Layar HP Sambil Senyum Sendiri"
+        }
     ]
 };
 
-// 4. Data Tahun Kelulusan Absurd/Kocak
+// 2. Data Tahun Kelulusan Absurd/Kocak
 const daftarTahunKocak = [
     "205 SM (Sebelum Masehi)",
     "1200 M (Zaman Kerajaan)",
@@ -55,15 +110,15 @@ const daftarTahunKocak = [
     "3024 M (Masa Depan)",
     "1 SM (Zaman Firaun)",
     "1350 M (Era Kejayaan Majapahit)",
-    "10.000 SM (Masa Jomok Purba)",
+    "10.000 SM (Masa Purba)",
     "2012 M (Sesaat Sebelum Isu Kiamat)",
     "Abad ke-42 SM (Zaman Mesozoikum)"
 ];
 
 // 1. Klik Lanjut di index.html
 function lanjut() {
-    const namaInput = document.getElementById("nama").value.trim();
-    const kampusInput = document.getElementById("kampus").value.trim();
+    const namaInput = document.getElementById("nama").value.trim().toUpperCase();
+    const kampusInput = document.getElementById("kampus").value.trim().toUpperCase();
 
     if (namaInput === "" || kampusInput === "") {
         alert("Silakan lengkapi nama dan nama kampus kamu terlebih dahulu!");
@@ -71,17 +126,17 @@ function lanjut() {
     }
 
     // Pilih Jenjang secara Random
+    const daftarJenjang = Object.keys(kombinasiAkademik);
     const jenjangRandom = daftarJenjang[Math.floor(Math.random() * daftarJenjang.length)];
 
-    // Pilih Gelar Kocak
-    const gelarRandom = daftarGelarKocak[Math.floor(Math.random() * daftarGelarKocak.length)];
-    const namaLengkapGelar = `${namaInput}, ${gelarRandom}`;
+    // Pilih Pasangan Gelar & Prodi yang Presisi Sesuai Jenjang
+    const opsiPaket = kombinasiAkademik[jenjangRandom];
+    const paketRandom = opsiPaket[Math.floor(Math.random() * opsiPaket.length)];
 
-    // Pilih Prodi sesuai Jenjang
-    const opsiProdi = prodiByJenjang[jenjangRandom];
-    const prodiRandom = opsiProdi[Math.floor(Math.random() * opsiProdi.length)];
+    const namaLengkapGelar = `${namaInput}, ${paketRandom.gelar}`;
+    const prodiRandom = paketRandom.prodi;
 
-    // Pilih Tahun
+    // Pilih Tahun Random
     const lulusRandom = daftarTahunKocak[Math.floor(Math.random() * daftarTahunKocak.length)];
 
     const data = {
@@ -96,7 +151,7 @@ function lanjut() {
     window.location.href = "verifikasi.html";
 }
 
-// 2. Load Data di verifikasi.html (Biarkan UI tetap strip "-" dulu)
+// 2. Load Data di verifikasi.html
 function loadData() {
     const data = JSON.parse(localStorage.getItem("mahasiswa"));
 
@@ -123,20 +178,29 @@ function centang(id) {
     }
 }
 
+// --- PROSESSING BERTAHAP (1/4 -> 2/4 -> 3/4 -> 4/4) ---
 function mulaiVerifikasi() {
-    setTimeout(function() {
-        centang("c1");
-    }, 1500);
+    const badge = document.getElementById("badgeProgress");
 
+    // Langkah 1: Awal masuk verifikasi (1/4 Lengkap)
+    if (badge) badge.innerText = "2/4 Lengkap";
+
+    // Langkah 3: Syarat Kedua Selesai (3/4 Lengkap) setelah 2 detik
     setTimeout(function() {
         centang("c2");
-        const badge = document.getElementById("badgeProgress");
-        if(badge) badge.innerText = "4/4 Lengkap";
-    }, 3000);
+        if (badge) badge.innerText = "3/4 Lengkap";
+    }, 2000);
 
+    // Langkah 4: Semua Syarat Selesai (4/4 Lengkap) setelah 4 detik
+    setTimeout(function() {
+        centang("c1");
+        if (badge) badge.innerText = "4/4 Lengkap";
+    }, 4000);
+
+    // Langkah 5: Pindah ke Halaman Berhasil setelah 5.5 detik
     setTimeout(function() {
         window.location.href = "berhasil.html";
-    }, 4500);
+    }, 5500);
 }
 
 // 3. Tampilkan Data Lengkap di berhasil.html
@@ -172,7 +236,6 @@ function closeAboutModalDirect() {
 
 function closeAboutModal(event) {
     const modal = document.getElementById("aboutModal");
-    // Tutup jika klik area gelap di luar kotak modal
     if (event.target === modal) {
         modal.style.display = "none";
     }

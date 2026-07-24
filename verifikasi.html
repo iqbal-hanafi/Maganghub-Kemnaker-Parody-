@@ -21,16 +21,15 @@
                 <span class="brand-subtitle">oleh Kemnaker (parody)</span>
             </div>
         </div>
-	<div class="nav-right">
-	    <!-- Tombol Modal About -->
-	    <button class="btn-about" onclick="openAboutModal()" title="Tentang Website Ini">
-	        <i class="fa-solid fa-circle-info"></i>
-	    </button>
-	    <i class="fa-regular fa-bell nav-icon"></i>
-	    <div class="avatar-circle">
-	        <i class="fa-regular fa-user"></i>
-	    </div>
-	</div>
+        <div class="nav-right">
+            <button class="btn-about" onclick="openAboutModal()" title="Tentang Website Ini">
+                <i class="fa-solid fa-circle-info"></i>
+            </button>
+            <i class="fa-regular fa-bell nav-icon"></i>
+            <div class="avatar-circle">
+                <i class="fa-regular fa-user"></i>
+            </div>
+        </div>
     </div>
 </nav>
 
@@ -40,11 +39,11 @@
         <div class="status-card-header">
             <div class="left-status">
                 <div class="icon-square-red">
-                    <i class="fa-solid fa-circle-xmark"></i>
+                    <i class="fa-solid fa-xmark"></i>
                 </div>
                 <div>
-                    <h3 class="status-title">Syarat Belum Terpenuhi</h3>
-                    <p class="status-sub">Beberapa syarat belum terpenuhi</p>
+                    <h3 class="status-title">Syarat Belum<br>Terpenuhi</h3>
+                    <p class="status-sub">Beberapa syarat belum<br>terpenuhi</p>
                 </div>
             </div>
             <span class="badge-red" id="badgeProgress">2/4 Lengkap</span>
@@ -54,22 +53,22 @@
         <div class="checklist-group">
             <div class="check-row">
                 <div id="c1" class="loading-spinner"></div>
-                <span class="check-text">Fresh graduate — ijazah kurang dari 1 tahun</span>
+                <span class="check-text">Fresh graduate pendidikan diploma/sarjana/profesi dengan kelulusan maksimal 1 tahun sebelum pendaftaran dibuka</span>
             </div>
 
             <div class="check-row">
                 <div id="c2" class="loading-spinner"></div>
-                <span class="check-text">Data Dukcapil & PDDikti sesuai</span>
+                <span class="check-text">Data NIK dan Nama yang terdaftar di PDDikti sesuai dengan data Dukcapil</span>
             </div>
 
             <div class="check-row">
                 <div class="icon-check-green"><i class="fa-solid fa-circle-check"></i></div>
-                <span class="check-text">Belum pernah ikut Program Magang Nasional</span>
+                <span class="check-text">Belum pernah ditetapkan sebagai peserta pemagangan nasional periode sebelumnya</span>
             </div>
 
             <div class="check-row">
                 <div class="icon-check-green"><i class="fa-solid fa-circle-check"></i></div>
-                <span class="check-text">Warga Negara Indonesia (NIK valid)</span>
+                <span class="check-text">Warga Negara Indonesia (NIK Valid)</span>
             </div>
         </div>
 
@@ -83,12 +82,13 @@
                 <span class="spinner-small"></span>
                 <span>Sedang Memeriksa</span>
             </div>
+            <button class="btn-refresh"><i class="fa-solid fa-rotate"></i> Refresh</button>
         </div>
 
-        <!-- Data List (Semua diset "-" saat proses berlangsung) -->
+        <!-- Data List -->
         <div class="data-group">
             <div class="data-row">
-                <div class="data-icon-bg"><i class="fa-regular fa-id-card"></i></div>
+                <div class="data-icon-bg"><i class="fa-regular fa-address-card"></i></div>
                 <div class="data-content">
                     <span class="data-label">Nama Mahasiswa</span>
                     <span class="data-val" id="nama">-</span>
@@ -128,9 +128,15 @@
             </div>
         </div>
 
-        <p class="sync-text">Terakhir disinkronisasi: <span id="syncTime"></span></p>
+        <p class="sync-text">Terakhir disinkronisasi: <span id="syncTime">21 Jul 2026 14:51</span></p>
     </div>
 </div>
+
+<!-- Floating Widget Chat Button -->
+<div class="floating-chat-btn">
+    <i class="fa-solid fa-comment-dots"></i>
+</div>
+
 <!-- Modal About / Tentang -->
 <div id="aboutModal" class="modal-overlay" onclick="closeAboutModal(event)">
     <div class="modal-content">
@@ -149,7 +155,6 @@
                 "Dibuat semata-mata sebagai peredam rasa stres dan hiburan di kala harapan verifikasi tak kunjung menemui titik terang." 🕊️
             </p>
 
-            <!-- Kredit Pembuat Dipindahkan Ke Sini -->
             <div class="about-author">
                 <span>Created by:</span>
                 <a href="https://instagram.com/ikbal.rdmc__" target="_blank" rel="noopener noreferrer">@ikbal.rdmc__</a>
