@@ -315,124 +315,162 @@ input:focus {
     to { transform: rotate(360deg); }
 }
 
-/* --- SECTION PDDIKTI HEADER --- */
+/* --- PDDICKTI TITLE ROW (TRANSPARAN, SEBARIS, RESPONSIVE & TANPA REFRESH) --- */
 .pddikti-title-row {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 16px;
-    padding-top: 4px;
+    justify-content: space-between; /* Judul di kiri, status 'Sedang Memeriksa' di kanan */
+    gap: 10px;
+    padding: 10px 0;               /* Transparan & sejajar presisi dengan kotak di bawah */
+    margin-top: 18px;
+    margin-bottom: 12px;
+    background: transparent;       /* Latar belakang transparan */
+    border: none;
+    box-shadow: none;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .title-left {
     display: flex;
     align-items: center;
     gap: 8px;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
-.icon-cap {
+.title-left .icon-cap {
+    font-size: 18px;
     color: var(--primary-blue);
-    font-size: 15px;
+    flex-shrink: 0;
 }
 
 .title-left h3 {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
     color: var(--text-main);
+    margin: 0;
+    line-height: 1;
 }
 
+/* Pill status sedang memeriksa */
 .pill-checking {
     display: flex;
     align-items: center;
     gap: 6px;
-    background-color: var(--blue-pill-bg);
-    color: var(--blue-pill-text);
-    padding: 6px 12px;
+    background-color: #eff6ff;
+    color: #2563eb;
+    border: 1px solid #bfdbfe;
+    padding: 4px 10px;
     border-radius: 20px;
     font-size: 11px;
     font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
-.pill-success {
-    background-color: var(--success-bg-light);
-    color: var(--success-text);
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: 600;
+/* Penyesuaian Responsif Layar Kecil (< 380px) */
+@media (max-width: 380px) {
+    .title-left h3 {
+        font-size: 12.5px;
+    }
+    .pill-checking {
+        font-size: 10px;
+        padding: 3px 8px;
+    }
 }
 
-.spinner-small {
-    width: 11px;
-    height: 11px;
-    border: 2px solid var(--primary-blue);
-    border-top: 2px solid transparent;
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-    display: inline-block;
-}
-
-.btn-refresh {
+/* Pill Status Terverifikasi (Style Mirip Sedang Memeriksa, Warna Hijau) */
+.pill-verified {
     display: flex;
     align-items: center;
     gap: 6px;
-    background-color: #ffffff;
-    border: 1px solid #e5e7eb;
-    color: #374151;
-    padding: 6px 12px;
-    border-radius: 12px;
+    background-color: #f0fdf4; /* Light green background */
+    color: #16a34a;           /* Darker green text */
+    border: 1px solid #bbf7d0; /* Soft green border */
+    padding: 4px 10px;
+    border-radius: 20px;
     font-size: 11px;
     font-weight: 600;
-    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
-.btn-refresh i {
+.pill-verified i {
     font-size: 12px;
-    color: #4b5563;
+    color: #16a34a;
 }
 
-/* --- DATA GROUP --- */
+/* Responsif untuk layar sempit */
+@media (max-width: 380px) {
+    .pill-verified {
+        font-size: 10px;
+        padding: 3px 8px;
+    }
+}
+
+/* --- DATA GROUP (RESPONSIVE & ALIGNED) --- */
+/* --- DATA GROUP (IKON SEJAJAR, TEKS BERTUMPUK DI SAMPING) --- */
 .data-group {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px; /* Jarak/space antar kotak baris data */
+    width: 100%;
+    margin-top: 12px;
+    margin-bottom: 16px;
 }
 
 .data-row {
     display: flex;
-    align-items: center;
-    gap: 12px;
+    align-items: center; /* Ikon berada sejajar vertikal di tengah teks */
+    gap: 14px;          /* Jarak horizontal dari Ikon ke area Teks */
+    padding: 12px 14px; /* Space dalam kotak agar lapang dan seimbang */
+    background-color: #f8fafc;
+    border: 1px solid #f1f5f9;
+    border-radius: 12px;
+    box-sizing: border-box;
 }
 
 .data-icon-bg {
-    width: 32px;
-    height: 32px;
-    background-color: #f3f4f6;
-    border-radius: 8px;
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    min-height: 38px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text-muted);
-    font-size: 14px;
-    flex-shrink: 0;
+    color: var(--primary-blue);
+    font-size: 15px;
+    flex-shrink: 0; /* Ikon tidak akan menciut/gepeng */
 }
 
-.data-content {
+.data-text-group, .data-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Label di atas, Isi di bawah */
+    justify-content: center;
+    gap: 3px;               /* Space halus antara Label dan Isi */
+    flex: 1;
+    min-width: 0;           /* Mencegah teks meluber di layar HP sempit */
 }
 
 .data-label {
-    font-size: 12px;
+    font-size: 11px;
     color: var(--text-muted);
-    font-weight: 400;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
 }
 
 .data-val {
-    font-size: 15px;
+    font-size: 13.5px;
     font-weight: 600;
     color: var(--text-main);
-    margin-top: 2px;
+    line-height: 1.35;
+    word-break: break-word; /* Mengatur pembungkusan teks panjang agar rapi */
 }
 
 .sync-text {
