@@ -429,27 +429,26 @@ input:focus {
     margin-bottom: 20px;
 }
 
-/* Footer bottom */
-.footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #ffffff;
-    border-top: 1px solid #e2e8f0;
-    padding: 10px 0;
+/* Styling Kredit Author di Dalam Modal */
+.about-author {
+    margin-top: 18px;
+    padding-top: 12px;
+    border-top: 1px dashed #e2e8f0;
     text-align: center;
-    z-index: 99;
+    font-size: 0.85rem;
+    color: #64748b;
 }
 
-.footer a {
+.about-author a {
     color: #2563eb;
-    font-size: 12px;
     font-weight: 600;
     text-decoration: none;
+    margin-left: 4px;
+    transition: color 0.2s;
 }
 
-.footer a:hover {
+.about-author a:hover {
+    color: #1d4ed8;
     text-decoration: underline;
 }
 
