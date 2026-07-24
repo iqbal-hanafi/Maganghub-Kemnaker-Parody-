@@ -137,7 +137,7 @@ function mulaiVerifikasi() {
     setTimeout(function() {
         centang("c2");
         const badge = document.getElementById("badgeProgress");
-        if(badge) badge.innerText = "5/5 Lengkap";
+        if(badge) badge.innerText = "4/4 Lengkap";
     }, 3000);
 
     setTimeout(function() {
