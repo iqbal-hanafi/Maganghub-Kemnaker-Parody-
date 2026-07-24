@@ -60,10 +60,6 @@ const daftarTahunKocak = [
     "Abad ke-42 SM (Zaman Mesozoikum)"
 ];
 
-function generateRandomNIM() {
-    return Math.floor(1000000000 + Math.random() * 9000000000).toString();
-}
-
 // 1. Klik Lanjut di index.html
 function lanjut() {
     const namaInput = document.getElementById("nama").value.trim();
@@ -85,14 +81,12 @@ function lanjut() {
     const opsiProdi = prodiByJenjang[jenjangRandom];
     const prodiRandom = opsiProdi[Math.floor(Math.random() * opsiProdi.length)];
 
-    // Pilih Tahun & NIM Random
+    // Pilih Tahun
     const lulusRandom = daftarTahunKocak[Math.floor(Math.random() * daftarTahunKocak.length)];
-    const nimRandom = generateRandomNIM();
 
     const data = {
         nama: namaLengkapGelar,
         kampus: kampusInput,
-        nim: nimRandom,
         jenjang: jenjangRandom,
         prodi: prodiRandom,
         lulus: lulusRandom
@@ -156,7 +150,6 @@ function tampilkanHasil() {
 
     document.getElementById("nama").innerText = data.nama;
     document.getElementById("kampus").innerText = data.kampus;
-    document.getElementById("nim").innerText = data.nim;
     document.getElementById("jenjang").innerText = data.jenjang;
     document.getElementById("prodi").innerText = data.prodi;
     document.getElementById("lulus").innerText = data.lulus;
